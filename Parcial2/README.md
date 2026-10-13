@@ -2,7 +2,8 @@
 
 Aplicación Angular 20 + Bootstrap 5 con tres secciones: **Hoja de vida**, **Aprendizaje del curso** y **Toyota** (tema libre).
 
-- Autor: Santiago Atehortúa Jaramillo — Código: _(completar)_
+- Autor: Santiago Atehortúa Jaramillo — Codigo: (230251013)
+         Samuel Alzate Correa - Codigo: (230252022)
 - Componentes standalone, rutas, interfaces TypeScript (`src/app/models`), datos en `src/app/data` y renderizado con `@for` / `@if`.
 
 ```bash
