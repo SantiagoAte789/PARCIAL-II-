@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/" (click)="cerrar()">
+      <i class="bi bi-code-square text-danger"></i> Santiago A.
+    </a>
+    <button class="navbar-toggler" type="button" (click)="alternar()" aria-label="Menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="abierto()">
+      <ul class="navbar-nav ms-auto">
+        @for (e of enlaces; track e.ruta) {
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="e.ruta" routerLinkActive="active fw-semibold" (click)="cerrar()">
+              <i class="bi {{ e.icono }}"></i> {{ e.texto }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

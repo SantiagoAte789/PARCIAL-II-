@@ -1,0 +1,5 @@
+:root { --brand: #eb0a1e; --dark: #1c1c1e; }
+body { background: #f4f5f7; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+.section-title { font-weight: 700; border-left: 5px solid var(--brand); padding-left: .75rem; margin-bottom: 1.25rem; }
+.card-hover { transition: transform .2s, box-shadow .2s; &:hover { transform: translateY(-4px); box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.12) !important; } }
+.btn-brand { background: var(--brand); color: #fff; border: 0; &:hover { background: #c20817; color: #fff; } }

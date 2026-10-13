@@ -1,0 +1,46 @@
+<section class="hero card border-0 shadow-sm mb-5">
+  <div class="row g-0 align-items-center p-4">
+    <div class="col-md-4 text-center mb-3 mb-md-0"><img src="toyota-logo.jpg" alt="Logo de Toyota" class="img-fluid"></div>
+    <div class="col-md-8">
+      <h1 class="h2">Toyota</h1>
+      <p class="lead">Toyota es una marca de automóviles de origen japonés, reconocida mundialmente por su confiabilidad, durabilidad y por impulsar la tecnología híbrida.</p>
+      <div class="row g-2">
+        @for (d of datos; track d.etiqueta) {
+          <div class="col-6 col-lg-3"><div class="bg-light rounded p-2 text-center">
+            <small class="text-muted d-block">{{ d.etiqueta }}</small><strong>{{ d.valor }}</strong></div></div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="h4 section-title">Modelos destacados</h2>
+<div class="mb-3 d-flex flex-wrap gap-2">
+  @for (c of categorias; track c) {
+    <button type="button" class="btn btn-sm" [class.btn-brand]="filtro() === c" [class.btn-outline-dark]="filtro() !== c" (click)="filtro.set(c)">{{ c }}</button>
+  }
+</div>
+<div class="row g-4 mb-5">
+  @for (m of visibles(); track m.nombre) {
+    <div class="col-sm-6 col-lg-3">
+      <article class="card h-100 border-0 shadow-sm card-hover text-center overflow-hidden">
+        <img [src]="m.imagen" [alt]="'Toyota ' + m.nombre" class="card-img-top modelo-img" loading="lazy">
+        <div class="card-body">
+          <h3 class="h5">Toyota {{ m.nombre }}</h3>
+          <span class="badge text-bg-dark">{{ m.categoria }}</span>
+          <span class="badge text-bg-light border">Desde {{ m.anioLanzamiento }}</span>
+          <p class="small text-muted mt-2 mb-0">{{ m.descripcion }}</p>
+        </div>
+      </article>
+    </div>
+  } @empty {
+    <p class="text-muted">No hay modelos en esta categoría.</p>
+  }
+</div>
+
+<h2 class="h4 section-title">Línea de tiempo</h2>
+<ul class="list-unstyled timeline">
+  @for (h of hitos; track h.anio) {
+    <li><strong class="text-danger">{{ h.anio }}</strong> — {{ h.evento }}</li>
+  }
+</ul>
